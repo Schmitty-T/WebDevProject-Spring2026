@@ -5,6 +5,7 @@ if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
 }
 
+// Function to switch between themes and save preference
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
