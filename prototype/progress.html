@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress</title>
+        <link rel="stylesheet" href="progress.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" />
+
+        <meta name="author" content="Santosh" />
+    </head>
+
+    <body>
+        <!-- Top section with the logo and menu -->
+        <header>
+            <nav>
+                <div id="logo-container">
+                    <a href="homepage.html">
+                        <img src="logo.jpeg" alt="logo" id="logo" />
+                    </a>
+                </div>
+                <div id="nav-container">
+                    <div id="nav-header">
+                        <h2>Phantom Training</h2>
+                    </div>
+
+                    <!-- Main navigation -->
+                    <div id="nav-bar">
+                        <div class="page-link">
+                            <a href="homepage.html">Home</a>
+                        </div>
+                        <div class="page-link">
+                            <a href="daily_routine.html">Daily Routine</a>
+                        </div>
+                        <div class="page-link">
+                            <a href="exercises.html">Exercises</a>
+                        </div>
+                        <div class="page-link" id="current-page">
+                            <a href="progress.html">Progress</a>
+                        </div>
+                        <div class="page-link">
+                            <a href="contact_us.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Button for switching to dark mode -->
+            <button id="themeToggle">Dark Mode</button>
+        </header>
+
+        <main>
+            <!-- Title area for the page -->
+            <div id="page-heading">
+                <h1>Progress Tracker</h1>
+                <p>"Track your journey to strength"</p>
+            </div>
+
+            <!-- Main workout numbers -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <h4>Total Workouts</h4>
+                    <p class="stat-value">47</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Current Streak</h4>
+                    <p class="stat-value">12 Days</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Goals Achieved</h4>
+                    <p class="stat-value">8</p>
+                </div>
+            </div>
+
+            <!-- Basic body progress stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <h4>Weight</h4>
+                    <p class="stat-value">165 lbs</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Body Fat %</h4>
+                    <p class="stat-value">18%</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Muscle Mass</h4>
+                    <p class="stat-value">135 lbs</p>
+                </div>
+            </div>
+
+            <!-- Chart section with weekly and monthly view -->
+            <div id="chart-section">
+                <div id="chart-header">
+                    <h3>Progress Chart</h3>
+                    <div id="chart-toggle">
+                        <button class="chart-btn active" id="weekly-btn">Weekly</button>
+                        <button class="chart-btn" id="monthly-btn">Monthly</button>
+                    </div>
+                </div>
+
+                <!-- The bars will be added here through JavaScript -->
+                <div id="chart-container"></div>
+                <p id="chart-caption">Workouts completed</p>
+            </div>
+
+            <!-- Progress for different exercises -->
+            <div id="exercise-section">
+                <h3>Exercise Progress</h3>
+                <div class="exercise-row">
+                    <div class="exercise-info">
+                        <p class="exercise-name">Bench Press</p>
+                        <p class="exercise-value">75%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="75"></div>
+                    </div>
+                </div>
+                <div class="exercise-row">
+                    <div class="exercise-info">
+                        <p class="exercise-name">Squat</p>
+                        <p class="exercise-value">60%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="60"></div>
+                    </div>
+                </div>
+                <div class="exercise-row">
+                    <div class="exercise-info">
+                        <p class="exercise-name">Deadlift</p>
+                        <p class="exercise-value">85%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="85"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current fitness targets -->
+            <div id="goals-section">
+                <h3>Current Goals</h3>
+                <div class="goal-row">
+                    <p><strong>Goal 1</strong> Bench press 200 lbs by end of the month.</p>
+                </div>
+                <div class="goal-row">
+                    <p><strong>Goal 2</strong> Run a 5K in under 25 minutes.</p>
+                </div>
+                <div class="goal-row">
+                    <p><strong>Goal 3</strong> Reach 15% body fat by next quarter.</p>
+                </div>
+            </div>
+        </main>
+
+        <script src="progress.js"></script>
+    </body>
+
+</html>
