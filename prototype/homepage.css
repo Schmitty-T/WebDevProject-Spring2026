@@ -120,9 +120,15 @@ nav {
   text-align: center;
 }
 
+.body-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #register {
   background-color: #434b54;
   color: #6498d7;
+  user-select: none;
 }
 #register:hover {
   background-color: #3e4e62;
@@ -130,9 +136,25 @@ nav {
 
 #login {
   background-color: #bdc8d5;
+  user-select: none;
 }
 
 #login:hover {
+  background-color: #d8dfe8;
+  color: #416b9f;
+}
+
+#logout-btn {
+  cursor: pointer;
+  user-select: none;
+  background-color: #bdc8d5;
+}
+
+#logout-btn:active {
+  transform: scale(0.98);
+}
+
+#logout-btn:hover {
   background-color: #d8dfe8;
   color: #416b9f;
 }
@@ -175,8 +197,26 @@ nav {
   color: #7ab0ff;
 }
 
+.dark #register:hover {
+  background-color: #444;
+  color: #7ab0ff;
+}
+
 .dark #login {
   background-color: #444;
+  color: #fff;
+}
+.dark #login:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.dark #logout-btn {
+  background-color: #444;
+  color: #fff;
+}
+.dark #logout-btn:hover {
+  background-color: #666;
   color: #fff;
 }
 
@@ -192,4 +232,65 @@ nav {
 
 #themeToggle:hover {
   background-color: #3e4e62;
+}
+
+/* Auth Container & Views */
+#auth-ui-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#logged-in-view {
+  background-color: #f4f5f5; /* Matches body background */
+  padding: 20px;
+  border-radius: 15px;
+}
+
+#welcome-message {
+  color: #3e4e62;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Dark Mode support for Welcome Message */
+.dark #welcome-message {
+  color: #7ab0ff;
+}
+
+.dark #logged-in-view {
+  background-color: #121212;
+}
+
+/* Form Input Styling for Register/Login Pages */
+#register-form input,
+#login-form input {
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #bdc8d5;
+  border-radius: 8px;
+  background-color: white;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+#register-form input:focus,
+#login-form input:focus {
+  border-color: #6498d7;
+}
+
+/* Button Reset for <button> tags */
+button.body-button {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  /* Re-uses your existing .body-button styles for font-size and padding */
+}
+
+/* Ensure links in button holders look consistent */
+#body-button-holder a.body-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit; /* Keeps your specific #register and #login colors */
 }

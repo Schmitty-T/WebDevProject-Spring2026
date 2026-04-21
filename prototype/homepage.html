@@ -80,9 +80,28 @@
             </li>
           </ul>
           <br />
-          <div id="body-button-holder">
-            <div class="body-button" id="register"><p>Register</p></div>
-            <div class="body-button" id="login"><p>Login</p></div>
+          <div id="auth-ui-container">
+            <div id="logged-out-view">
+              <div id="body-button-holder">
+                <div class="body-button" id="register">
+                  <a href="register.html"><p>Register</p></a>
+                </div>
+                <div class="body-button" id="login">
+                  <a href="login.html"><p>Login</p></a>
+                </div>
+              </div>
+            </div>
+
+            <div id="logged-in-view" style="display: none">
+              <h3 id="welcome-message"></h3>
+              <div id="body-button-holder">
+                <div id="body-button-holder">
+                  <div class="body-button" id="logout-btn">
+                    <p>Logout</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div id="body-img-container">
