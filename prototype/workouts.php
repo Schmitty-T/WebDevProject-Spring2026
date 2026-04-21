@@ -67,7 +67,7 @@
           </div>
         </div>
       </nav>
-      <button id="themeToggle">Dark Mode</button>
+      <button id="themeToggle">Switch Theme</button>
       <div class="CartItemsContainer">
             <table class="ExerciseContainer">
                 <thead>

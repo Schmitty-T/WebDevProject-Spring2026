@@ -16,3 +16,5 @@ RUN mkdir -p /var/data && chown -R www-data:www-data /var/data
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/html
+
+COPY prototype/workouts.db /var/data/workouts.db
