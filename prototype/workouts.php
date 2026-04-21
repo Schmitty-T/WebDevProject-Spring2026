@@ -1,6 +1,6 @@
 <!doctype html>
 <?php
-        $db = new PDO("sqlite:workouts.db");
+        $db = new PDO("sqlite:/var/data/workouts.db");
         $musclegroup = $_GET['MuscleGroup'] ?? null;
         if($musclegroup){
             $stmt = $db->prepare("SELECT * FROM Exercises WHERE MuscleGroup = :group");
