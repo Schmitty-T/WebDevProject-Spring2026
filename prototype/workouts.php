@@ -50,7 +50,7 @@
           </div>
           <div id="nav-bar">
             <div class="page-link">
-              <a href="homepage.html">Home</a>
+              <a href="index.html">Home</a>
             </div>
             <div class="page-link">
               <a href="daily_routine.html">Daily Routine</a>
