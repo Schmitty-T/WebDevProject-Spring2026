@@ -1,0 +1,94 @@
+/* LAYOUT */
+.routine-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* LEFT SIDE */
+.routine-main {
+  width: 70%;
+}
+
+.routine-main h2 {
+  text-align: center;
+  color: #6498d7;
+}
+
+.routine-main table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e6e6e6;
+}
+
+.routine-main td {
+  border: 2px solid #3e4e62;
+  padding: 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* COMPLETED ROW */
+.completed {
+  background-color: #b7e4c7 !important;
+}
+
+/* RIGHT SIDE */
+.routine-sidebar {
+  width: 30%;
+  background-color: #dcdcdc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.routine-sidebar h2 {
+  text-align: center;
+  color: #6498d7;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #999;
+}
+
+.checklist input {
+  width: 20px;
+  height: 20px;
+}
+
+/* BUTTON */
+.routine-sidebar button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.routine-sidebar button:hover {
+  background-color: #3e4e62;
+}
+
+/* DARK MODE */
+.dark .routine-main table {
+  background-color: #2a2a2a;
+}
+
+.dark .routine-sidebar {
+  background-color: #1e1e1e;
+}
+
+.dark .completed {
+  background-color: #2e7d32 !important;
+}

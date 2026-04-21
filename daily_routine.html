@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Routine</title>
+
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="dailyroutine.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div id="logo-container">
+      <a href="homepage.html">
+        <img src="logo.jpeg" alt="logo">
+      </a>
+    </div>
+
+    <div id="nav-container">
+      <h2>Phantom Training</h2>
+
+      <div id="nav-bar">
+        <div class="page-link">
+          <a href="homepage.html">Home</a>
+        </div>
+
+        <div class="page-link" id="current-page">
+          <a href="dailyroutine.html">Daily Routine</a>
+        </div>
+
+        <div class="page-link">
+          <a href="workouts.php">Exercises</a>
+        </div>
+
+        <div class="page-link">
+          <a href="progress.html">Progress</a>
+        </div>
+
+        <div class="page-link">
+          <a href="contact_us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <button id="themeToggle">Dark Mode</button>
+</header>
+
+<main>
+
+<div class="routine-container">
+
+  <!-- LEFT -->
+  <div class="routine-main">
+    <h2>Daily Exercises</h2>
+
+    <table>
+      <tr id="row0">
+        <td>Exercise 1 Instructions</td>
+        <td>Equipment Used</td>
+      </tr>
+      <tr id="row1">
+        <td>Exercise 2 Instructions</td>
+        <td>Equipment Used</td>
+      </tr>
+      <tr id="row2">
+        <td>Exercise 3 Instructions</td>
+        <td>Equipment Used</td>
+      </tr>
+      <tr id="row3">
+        <td>Exercise 4 Instructions</td>
+        <td>Equipment Used</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="routine-sidebar">
+    <h2>Exercise Checklist</h2>
+
+    <div class="checklist">
+      <label><input type="checkbox" data-index="0"> Exercise 1</label>
+      <label><input type="checkbox" data-index="1"> Exercise 2</label>
+      <label><input type="checkbox" data-index="2"> Exercise 3</label>
+      <label><input type="checkbox" data-index="3"> Exercise 4</label>
+    </div>
+
+    <button onclick="clearProgress()">Clear Progress</button>
+  </div>
+
+</div>
+
+</main>
+
+<script src="dailyroutine.js"></script>
+<script src="script.js"></script> <!-- your existing JS (dark mode, etc.) -->
+
+</body>
+</html>
