@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us</title>
+    <meta name="author" content="Saurya Singh" />
+
+    <link rel="stylesheet" href="contact_us.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div id="logo-container">
+          <a href="homepage.html">
+            <img src="logo.jpeg"
+              alt="Phantom Training logo"
+              id="logo" />
+          </a>
+
+        </div>
+        <div id="nav-container">
+          <div id="nav-header">
+            <h2>Phantom Training</h2>
+          </div>
+
+          <div id="nav-bar">
+            <div class="page-link">
+              <a href="homepage.html">Home</a>
+            </div>
+
+            <div class="page-link">
+              <a href="daily_routine.html">Daily Routine</a>
+            </div>
+
+            <div class="page-link">
+              <a href="exercises.html">Exercises</a>
+            </div>
+
+            <div class="page-link">
+              <a href="progress.html">Progress</a>
+            </div>
+
+            <div class="page-link" id="current-page">
+              <a href="contact_us.html">Contact Us</a>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+      <button id="themeToggle">Dark Mode</button>
+    </header>
+
+    <main>
+      <div id="page-wrap">
+        <div id="info-side">
+          <h3>Get in Touch</h3>
+          <br />
+
+          <p>Got questions about your training? Not sure where to start?
+          Drop us a message and we'll help you out.</p>
+          <br />
+
+          <ul>
+            <li><h4>Training Questions: </h4><p>Ask about routines or getting started.</p></li>
+            <li><h4>Progress Support: </h4><p>Struggling to hit goals? Lets talk.</p></li>
+            <li><h4>Site Issues: </h4><p>Something broken? Tell us.</p></li>
+            <li><h4>Feedback: </h4><p>We actually read it all.</p></li>
+          </ul>
+
+        </div>
+
+        <div id="form-side">
+          <form id="cform" novalidate>
+
+            <div class="frow">
+              <input type="text" id="uname" placeholder="Full Name" maxlength="80" />
+              <span class="ferr" id="uname-err">Name cant be empty.</span>
+            </div>
+
+            <div class="frow">
+              <input type="email" id="uemail" placeholder="Email Address" />
+              <span class="ferr" id="uemail-err">Thats not a valid email.</span>
+            </div>
+
+            <div class="frow">
+              <input type="tel" id="uphone" placeholder="Phone (optional)" maxlength="15" />
+              <span class="ferr" id="uphone-err">Numbers only, 7-15 digits.</span>
+            </div>
+
+            <div class="frow">
+
+              <select id="utopic">
+                <option value="">Subject</option>
+                <option value="training">Training Question</option>
+                <option value="progress">Progress Help</option>
+                <option value="bug">Site Issue</option>
+                <option value="other">Other</option>
+              </select>
+
+              <span class="ferr" id="utopic-err">Pick a subject.</span>
+              
+            </div>
+
+            <div class="frow">
+              <textarea id="umsg" placeholder="Your message here..." maxlength="1000"></textarea>
+              <span id="ccount">0 / 1000</span>
+              <span class="ferr" id="umsg-err">To short, need at least 10 characters.</span>
+            </div>
+
+            <button type="submit" id="sbtn">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <div id="toast">Message sent!</div>
+    <script src="contact_us.js"></script>
+
+  </body>
+
+</html>
