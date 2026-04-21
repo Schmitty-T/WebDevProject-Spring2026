@@ -25,9 +25,7 @@
       <nav>
         <div id="logo-container">
           <a href="homepage.html">
-            <img src="logo.jpeg"
-              alt="Phantom Training logo"
-              id="logo" />
+            <img src="logo.jpeg" alt="Phantom Training logo" id="logo" />
           </a>
 
         </div>
@@ -37,22 +35,14 @@
           </div>
 
           <div id="nav-bar">
-            <div class="page-link">
-              <a href="homepage.html">Home</a>
-            </div>
-
-            <div class="page-link">
-              <a href="daily_routine.html">Daily Routine</a>
-            </div>
+            <div class="page-link"><a href="homepage.html">Home</a></div>
+            <div class="page-link"><a href="daily_routine.html">Daily Routine</a></div>
 
             <div class="page-link">
               <a href="exercises.html">Exercises</a>
             </div>
 
-            <div class="page-link">
-              <a href="progress.html">Progress</a>
-            </div>
-
+            <div class="page-link"><a href="progress.html">Progress</a></div>
             <div class="page-link" id="current-page">
               <a href="contact_us.html">Contact Us</a>
             </div>
@@ -87,22 +77,20 @@
           <form id="cform" novalidate>
 
             <div class="frow">
-              <input type="text" id="uname" placeholder="Full Name" maxlength="80" />
+              <input id="uname" type="text" placeholder="Full Name" maxlength="80" />
               <span class="ferr" id="uname-err">Name cant be empty.</span>
             </div>
-
             <div class="frow">
-              <input type="email" id="uemail" placeholder="Email Address" />
+              <input type="email" placeholder="Email Address" id="uemail" />
               <span class="ferr" id="uemail-err">Thats not a valid email.</span>
             </div>
 
             <div class="frow">
-              <input type="tel" id="uphone" placeholder="Phone (optional)" maxlength="15" />
+              <input type="tel" id="uphone" maxlength="15" placeholder="Phone (optional)" />
               <span class="ferr" id="uphone-err">Numbers only, 7-15 digits.</span>
             </div>
 
             <div class="frow">
-
               <select id="utopic">
                 <option value="">Subject</option>
                 <option value="training">Training Question</option>
@@ -110,13 +98,11 @@
                 <option value="bug">Site Issue</option>
                 <option value="other">Other</option>
               </select>
-
               <span class="ferr" id="utopic-err">Pick a subject.</span>
-              
             </div>
 
             <div class="frow">
-              <textarea id="umsg" placeholder="Your message here..." maxlength="1000"></textarea>
+              <textarea id="umsg" maxlength="1000" placeholder="Your message here..."></textarea>
               <span id="ccount">0 / 1000</span>
               <span class="ferr" id="umsg-err">To short, need at least 10 characters.</span>
             </div>
