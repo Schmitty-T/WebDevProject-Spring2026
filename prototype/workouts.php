@@ -1,6 +1,15 @@
 <!doctype html>
 <?php
-        $db = new PDO("sqlite:workouts.db");
+    $db = new PDO("sqlite:/var/data/workouts.db");       
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS Exercises (
+            Exercise VARCHAR(30) NOT NULL,
+            MuscleGroup VARCHAR(10),
+            TutorialVideo VARCHAR(100)
+        );
+        ");
         $musclegroup = $_GET['MuscleGroup'] ?? null;
         if($musclegroup){
             $stmt = $db->prepare("SELECT * FROM Exercises WHERE MuscleGroup = :group");
@@ -41,7 +50,7 @@
           </div>
           <div id="nav-bar">
             <div class="page-link">
-              <a href="homepage.html">Home</a>
+              <a href="index.html">Home</a>
             </div>
             <div class="page-link">
               <a href="daily_routine.html">Daily Routine</a>
@@ -58,7 +67,7 @@
           </div>
         </div>
       </nav>
-      <button id="themeToggle">Dark Mode</button>
+      <button id="themeToggle">Switch Theme</button>
       <div class="CartItemsContainer">
             <table class="ExerciseContainer">
                 <thead>
