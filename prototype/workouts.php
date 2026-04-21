@@ -53,7 +53,7 @@
               <a href="index.html">Home</a>
             </div>
             <div class="page-link">
-              <a href="daily_routine.html">Daily Routine</a>
+              <a href="dailyroutine.php">Daily Routine</a>
             </div>
             <div class="page-link" id="current-page">
               <a href="workouts.php">Exercises</a>
