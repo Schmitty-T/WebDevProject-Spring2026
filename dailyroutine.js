@@ -1,5 +1,5 @@
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
-
+const todayKey = "exerciseProgress_" + new Date().toDateString();
 // LOAD SAVED DATA
 window.onload = function () {
   const saved = JSON.parse(localStorage.getItem("exerciseProgress")) || [];
@@ -16,10 +16,10 @@ window.onload = function () {
 checkboxes.forEach(box => {
   box.addEventListener("change", () => {
     const index = box.dataset.index;
-    let saved = JSON.parse(localStorage.getItem("exerciseProgress")) || [];
+    let saved = JSON.parse(localStorage.getItem(todayKey)) || [];
 
     saved[index] = box.checked;
-    localStorage.setItem("exerciseProgress", JSON.stringify(saved));
+    localStorage.setItem(todayKey, JSON.stringify(saved));
 
     markComplete(index, box.checked);
   });
@@ -39,7 +39,7 @@ function markComplete(index, completed) {
 
 // CLEAR ALL
 function clearProgress() {
-  localStorage.removeItem("exerciseProgress");
+  localStorage.removeItem(todayKey);
 
   checkboxes.forEach((box, index) => {
     box.checked = false;
