@@ -1,6 +1,15 @@
 <!doctype html>
 <?php
-        $db = new PDO("sqlite:/var/data/workouts.db");
+    $db = new PDO("sqlite:/var/data/workouts.db");       
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS Exercises (
+            Exercise VARCHAR(30) NOT NULL,
+            MuscleGroup VARCHAR(10),
+            TutorialVideo VARCHAR(100)
+        );
+        ");
         $musclegroup = $_GET['MuscleGroup'] ?? null;
         if($musclegroup){
             $stmt = $db->prepare("SELECT * FROM Exercises WHERE MuscleGroup = :group");
