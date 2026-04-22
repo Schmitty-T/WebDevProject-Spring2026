@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Phantom Training</title>
+    <link rel="stylesheet" href="homepage.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo-container">
+          <a href="homepage.html">
+            <img src="logo.jpeg" alt="logo" id="logo" />
+          </a>
+        </div>
+        <div id="nav-container">
+          <div id="nav-header">
+            <h2>Phantom Training</h2>
+          </div>
+          <div id="nav-bar">
+            <div class="page-link"><a href="homepage.html">Home</a></div>
+            <div class="page-link">
+              <a href="daily_routine.html">Daily Routine</a>
+            </div>
+            <div class="page-link"><a href="exercises.html">Exercises</a></div>
+            <div class="page-link"><a href="progress.html">Progress</a></div>
+            <div class="page-link">
+              <a href="contact_us.html">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <button id="themeToggle">Dark Mode</button>
+    </header>
+
+    <main>
+      <div class="body-container">
+        <div id="body-description">
+          <h3>Welcome Back</h3>
+          <p>
+            Enter your credentials to access your routines and track your
+            progress.
+          </p>
+
+          <form id="login-form">
+            <input
+              type="text"
+              id="login-username"
+              placeholder="Username"
+              required
+              style="
+                display: block;
+                margin: 20px auto;
+                padding: 12px;
+                width: 80%;
+                font-size: 16px;
+              "
+            />
+
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Password"
+              required
+              style="
+                display: block;
+                margin: 20px auto;
+                padding: 12px;
+                width: 80%;
+                font-size: 16px;
+              "
+            />
+
+            <div id="body-button-holder" style="justify-content: center">
+              <button type="submit" class="body-button" id="login">
+                Login
+              </button>
+            </div>
+          </form>
+
+          <p style="text-align: center; margin-top: 20px">
+            Don't have an account?
+            <a href="register.html" style="color: #6498d7">Register here</a>
+          </p>
+        </div>
+
+        <div id="body-img-container">
+          <img src="workout.png" alt="workout" id="body-img" />
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
