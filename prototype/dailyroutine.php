@@ -43,7 +43,7 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       <div id="nav-bar">
         <div class="page-link">
-          <a href="homepage.html">Home</a>
+          <a href="index.html">Home</a>
         </div>
 
         <div class="page-link" id="current-page">
