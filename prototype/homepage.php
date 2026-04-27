@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,7 +30,7 @@
           </div>
           <div id="nav-bar">
             <div class="page-link" id="current-page">
-              <a href="homepage.html">Home</a>
+              <a href="homepage.php">Home</a>
             </div>
             <div class="page-link">
               <a href="daily_routine.php">Daily Routine</a>
@@ -81,6 +82,7 @@
           </ul>
           <br />
           <div id="auth-ui-container">
+            <?php if (!isset($_SESSION['username'])): ?>
             <div id="logged-out-view">
               <div id="body-button-holder">
                 <div class="body-button" id="register">
@@ -91,17 +93,23 @@
                 </div>
               </div>
             </div>
-
-            <div id="logged-in-view" style="display: none">
-              <h3 id="welcome-message"></h3>
+            <?php else: ?>
+            <div id="logged-in-view">
+              <h3 id="welcome-message">
+                Welcome back, <?php echo
+                htmlspecialchars($_SESSION['username']); ?>!
+              </h3>
               <div id="body-button-holder">
-                <div id="body-button-holder">
-                  <div class="body-button" id="logout-btn">
-                    <p>Logout</p>
-                  </div>
+                <div class="body-button" id="logout-btn">
+                  <a
+                    href="logout.php"
+                    style="text-decoration: none; color: inherit"
+                    ><p>Logout</p></a
+                  >
                 </div>
               </div>
             </div>
+            <?php endif; ?>
           </div>
         </div>
         <div id="body-img-container">

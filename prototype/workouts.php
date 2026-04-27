@@ -50,10 +50,10 @@
           </div>
           <div id="nav-bar">
             <div class="page-link">
-              <a href="homepage.html">Home</a>
+              <a href="homepage.php">Home</a>
             </div>
             <div class="page-link">
-              <a href="daily_routine.html">Daily Routine</a>
+              <a href="daily_routine.php">Daily Routine</a>
             </div>
             <div class="page-link" id="current-page">
               <a href="workouts.php">Exercises</a>
