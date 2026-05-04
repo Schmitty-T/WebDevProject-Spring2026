@@ -15,4 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
+
+  // Handle Logout for the <div> element
+  const logoutBtn = document.getElementById("logout-btn");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      // 1. Remove the current user from storage
+      localStorage.removeItem("currentUser");
+
+      // 2. Optional: Provide a quick alert
+      alert("You have been logged out.");
+
+      // 3. Refresh the page to reset the UI (hides welcome message, shows login/register)
+      window.location.href = "homepage.html";
+    });
+  }
+
+  // --- 4. AUTH UI UPDATE (For Homepage) ---
+  const loggedOutView = document.getElementById("logged-out-view");
+  const loggedInView = document.getElementById("logged-in-view");
+  const currentUser = localStorage.getItem("currentUser");
+
+  if (currentUser && loggedInView) {
+    if (loggedOutView) loggedOutView.style.display = "none";
+    loggedInView.style.display = "block";
+    document.getElementById("welcome-message").textContent =
+      `Welcome back, ${currentUser}!`;
+  }
 });
