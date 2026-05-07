@@ -16,49 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 2. REGISTRATION LOGIC ---
-  const regForm = document.getElementById("register-form");
-  if (regForm) {
-    regForm.addEventListener("submit", (e) => {
-      e.preventDefault(); // THIS STOPS THE REFRESH
-
-      const user = document.getElementById("reg-username").value;
-      const pass = document.getElementById("reg-password").value;
-
-      if (user && pass) {
-        localStorage.setItem(
-          "mockUser",
-          JSON.stringify({ username: user, password: pass }),
-        );
-        alert("Registration successful! Redirecting to login...");
-        window.location.href = "login.html";
-      }
-    });
-  }
-
-  // --- 3. LOGIN LOGIC ---
-  const loginForm = document.getElementById("login-form");
-  if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault(); // THIS STOPS THE REFRESH
-
-      const userInput = document.getElementById("login-username").value;
-      const passInput = document.getElementById("login-password").value;
-      const storedUser = JSON.parse(localStorage.getItem("mockUser"));
-
-      if (
-        storedUser &&
-        storedUser.username === userInput &&
-        storedUser.password === passInput
-      ) {
-        localStorage.setItem("currentUser", userInput);
-        window.location.href = "homepage.html";
-      } else {
-        alert("Invalid credentials. Did you register first?");
-      }
-    });
-  }
-
   // Handle Logout for the <div> element
   const logoutBtn = document.getElementById("logout-btn");
 

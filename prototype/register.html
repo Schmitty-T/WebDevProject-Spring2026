@@ -14,17 +14,35 @@
     <div class="body-container">
       <div id="body-description">
         <h3>Join the Program</h3>
-        <form id="register-form">
+        <form id="register-form" action="register.php" method="POST">
           <input
             type="text"
             id="reg-username"
+            name="username"
             placeholder="Username"
+            required
+            style="display: block; margin: 10px auto; padding: 10px; width: 80%"
+          />
+          <input
+            type="email"
+            id="reg-email"
+            name="email"
+            placeholder="Email Address"
+            required
+            style="display: block; margin: 10px auto; padding: 10px; width: 80%"
+          />
+          <input
+            type="text"
+            id="reg-address"
+            name="address"
+            placeholder="Physical Address"
             required
             style="display: block; margin: 10px auto; padding: 10px; width: 80%"
           />
           <input
             type="password"
             id="reg-password"
+            name="password"
             placeholder="Password"
             required
             style="display: block; margin: 10px auto; padding: 10px; width: 80%"
@@ -36,7 +54,7 @@
           </div>
         </form>
         <p style="text-align: center; margin-top: 10px">
-          <a href="homepage.html">Back to Home</a>
+          <a href="homepage.php">Back to Home</a>
         </p>
       </div>
     </div>
