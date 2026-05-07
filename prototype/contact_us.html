@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
-
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -10,6 +8,7 @@
     <meta name="author" content="Saurya Singh" />
 
     <link rel="stylesheet" href="contact_us.css" />
+    <link rel="stylesheet" href="homepage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -17,41 +16,42 @@
       href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
   </head>
 
   <body>
     <header>
       <nav>
         <div id="logo-container">
-          <a href="homepage.html">
-            <img src="logo.jpeg" alt="Phantom Training logo" id="logo" />
+          <a href="homepage.php">
+            <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
           </a>
-
         </div>
         <div id="nav-container">
           <div id="nav-header">
             <h2>Phantom Training</h2>
           </div>
-
-          <div id="nav-bar">
-            <div class="page-link"><a href="homepage.html">Home</a></div>
-            <div class="page-link"><a href="daily_routine.html">Daily Routine</a></div>
-
-            <div class="page-link">
-              <a href="exercises.html">Exercises</a>
-            </div>
-
-            <div class="page-link"><a href="progress.html">Progress</a></div>
-            <div class="page-link" id="current-page">
+          <ul id="nav-bar">
+            <li class="page-link">
+              <a href="homepage.php">Home</a>
+            </li>
+            <li class="page-link">
+              <a href="dailyroutine.php">Daily Routine</a>
+            </li>
+            <li class="page-link">
+              <a href="workouts.php">Exercises</a>
+            </li>
+            <li class="page-link">
+              <a href="progress.html">Progress</a>
+            </li>
+            <li class="page-link" id="current-page">
               <a href="contact_us.html">Contact Us</a>
-            </div>
-
-          </div>
+            </li>
+          </ul>
         </div>
       </nav>
-
-      <button id="themeToggle">Dark Mode</button>
+      <button id="themeToggle" aria-label="Toggle dark and light theme">
+        Switch Theme
+      </button>
     </header>
 
     <main>
@@ -60,24 +60,41 @@
           <h3>Get in Touch</h3>
           <br />
 
-          <p>Got questions about your training? Not sure where to start?
-          Drop us a message and we'll help you out.</p>
+          <p>
+            Got questions about your training? Not sure where to start? Drop us
+            a message and we'll help you out.
+          </p>
           <br />
 
           <ul>
-            <li><h4>Training Questions: </h4><p>Ask about routines or getting started.</p></li>
-            <li><h4>Progress Support: </h4><p>Struggling to hit goals? Lets talk.</p></li>
-            <li><h4>Site Issues: </h4><p>Something broken? Tell us.</p></li>
-            <li><h4>Feedback: </h4><p>We actually read it all.</p></li>
+            <li>
+              <h4>Training Questions:</h4>
+              <p>Ask about routines or getting started.</p>
+            </li>
+            <li>
+              <h4>Progress Support:</h4>
+              <p>Struggling to hit goals? Lets talk.</p>
+            </li>
+            <li>
+              <h4>Site Issues:</h4>
+              <p>Something broken? Tell us.</p>
+            </li>
+            <li>
+              <h4>Feedback:</h4>
+              <p>We actually read it all.</p>
+            </li>
           </ul>
-
         </div>
 
         <div id="form-side">
           <form id="cform" novalidate>
-
             <div class="frow">
-              <input id="uname" type="text" placeholder="Full Name" maxlength="80" />
+              <input
+                id="uname"
+                type="text"
+                placeholder="Full Name"
+                maxlength="80"
+              />
               <span class="ferr" id="uname-err">Name cant be empty.</span>
             </div>
             <div class="frow">
@@ -86,8 +103,15 @@
             </div>
 
             <div class="frow">
-              <input type="tel" id="uphone" maxlength="15" placeholder="Phone (optional)" />
-              <span class="ferr" id="uphone-err">Numbers only, 7-15 digits.</span>
+              <input
+                type="tel"
+                id="uphone"
+                maxlength="15"
+                placeholder="Phone (optional)"
+              />
+              <span class="ferr" id="uphone-err"
+                >Numbers only, 7-15 digits.</span
+              >
             </div>
 
             <div class="frow">
@@ -102,21 +126,24 @@
             </div>
 
             <div class="frow">
-              <textarea id="umsg" maxlength="1000" placeholder="Your message here..."></textarea>
+              <textarea
+                id="umsg"
+                maxlength="1000"
+                placeholder="Your message here..."
+              ></textarea>
               <span id="ccount">0 / 1000</span>
-              <span class="ferr" id="umsg-err">To short, need at least 10 characters.</span>
+              <span class="ferr" id="umsg-err"
+                >To short, need at least 10 characters.</span
+              >
             </div>
 
             <button type="submit" id="sbtn">Send Message</button>
           </form>
         </div>
-
       </div>
     </main>
 
     <div id="toast">Message sent!</div>
     <script src="contact_us.js"></script>
-
   </body>
-
 </html>

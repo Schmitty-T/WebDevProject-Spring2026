@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
     <link rel="stylesheet" href="exercises.css" />
+    <link rel="stylesheet" href="homepage.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,34 +41,34 @@
     <header>
       <nav>
         <div id="logo-container">
-          <a href="homepage.html">
-            <img src="logo.jpeg" alt="logo" id="logo" />
+          <a href="homepage.php">
+            <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
           </a>
         </div>
         <div id="nav-container">
           <div id="nav-header">
             <h2>Phantom Training</h2>
           </div>
-          <div id="nav-bar">
-            <div class="page-link">
-              <a href="index.html">Home</a>
-            </div>
-            <div class="page-link">
-              <a href="daily_routine.html">Daily Routine</a>
-            </div>
-            <div class="page-link" id="current-page">
+          <ul id="nav-bar">
+            <li class="page-link">
+              <a href="homepage.php">Home</a>
+            </li>
+            <li class="page-link">
+              <a href="dailyroutine.php">Daily Routine</a>
+            </li>
+            <li class="page-link" id="current-page">
               <a href="workouts.php">Exercises</a>
-            </div>
-            <div class="page-link">
+            </li>
+            <li class="page-link">
               <a href="progress.html">Progress</a>
-            </div>
-            <div class="page-link">
+            </li>
+            <li class="page-link">
               <a href="contact_us.html">Contact Us</a>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </nav>
-      <button id="themeToggle">Switch Theme</button>
+      <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
       <div class="CartItemsContainer">
             <table class="ExerciseContainer">
                 <thead>

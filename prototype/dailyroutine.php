@@ -30,43 +30,38 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<header>
-  <nav>
-    <div id="logo-container">
-      <a href="homepage.html">
-        <img src="logo.jpeg" alt="logo">
-      </a>
-    </div>
-
-    <div id="nav-container">
-      <h2>Phantom Training</h2>
-
-      <div id="nav-bar">
-        <div class="page-link">
-          <a href="homepage.php">Home</a>
-        </div>
-
-        <div class="page-link" id="current-page">
-          <a href="dailyroutine.php">Daily Routine</a>
-        </div>
-
-        <div class="page-link">
-          <a href="workouts.php">Exercises</a>
-        </div>
-
-        <div class="page-link">
-          <a href="progress.html">Progress</a>
-        </div>
-
-        <div class="page-link">
-          <a href="contact_us.html">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <button id="themeToggle">Dark Mode</button>
-</header>
+  <header>
+        <nav>
+          <div id="logo-container">
+            <a href="homepage.php">
+              <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
+            </a>
+          </div>
+          <div id="nav-container">
+            <div id="nav-header">
+              <h2>Phantom Training</h2>
+            </div>
+            <ul id="nav-bar">
+              <li class="page-link">
+                <a href="homepage.php">Home</a>
+              </li>
+              <li class="page-link" id="current-page">
+                <a href="dailyroutine.php">Daily Routine</a>
+              </li>
+              <li class="page-link">
+                <a href="workouts.php">Exercises</a>
+              </li>
+              <li class="page-link">
+                <a href="progress.html">Progress</a>
+              </li>
+              <li class="page-link">
+                <a href="contact_us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
+      </header>
 
 <main>
 
@@ -111,8 +106,9 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </main>
 
-<script src="dailyroutine.js"></script>
 <script src="script.js"></script>
+<script src="dailyroutine.js"></script>
+
 
 </body>
 </html>

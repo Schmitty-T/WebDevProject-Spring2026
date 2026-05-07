@@ -31,7 +31,7 @@
               <a href="homepage.php">Home</a>
             </li>
             <li class="page-link">
-              <a href="daily_routine.php">Daily Routine</a>
+              <a href="dailyroutine.php">Daily Routine</a>
             </li>
             <li class="page-link">
               <a href="workouts.php">Exercises</a>
