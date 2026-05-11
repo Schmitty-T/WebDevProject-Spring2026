@@ -30,9 +30,13 @@ nav {
   height: 100%;
   width: 100%;
 }
+#logo{
+    height:175px;
+    width: 300px;
+}
 
 .page-link {
-  padding: 10px;
+  padding: 5px;
   background-color: black;
   border-radius: 5px;
   width: 10%;
@@ -121,6 +125,16 @@ nav {
 #themeToggle:hover {
   background-color: #3e4e62;
 }
+#SearchContainer{
+    width:96.5%;
+    box-sizing: border-box;
+    padding:10px;
+}
+#ExerciseSearch{
+    font-size:24px;
+    width:100%;
+    height:50px;
+}
 .CartItemsContainer{
     display:flex;
     flex-wrap: wrap;
@@ -132,13 +146,14 @@ nav {
 }
 
 .ExerciseContainer {
-    width:68%;
+    width:65%;
     margin-left: 10px;
     border: 1px solid #0e4e8f;
 }
 .FilterContainer {
     width:30%;
     border: 1px solid #0e4e8f;
+    table-layout:fixed;
 }
 .FilterContainer td {
   padding: 10px;
@@ -165,7 +180,7 @@ nav {
   padding: 10px;
   background-color: #cccccc;
   border-radius: 5px;
-  width: 98%;
+  width: 96%;
   vertical-align: middle;
 }
 .titlecell  {

@@ -1,6 +1,6 @@
 <!doctype html>
 <?php
-    $db = new PDO("sqlite:/var/data/workouts.db");       
+    $db = new PDO("sqlite:workouts.db");       
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $db->exec("
@@ -24,7 +24,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Exercises</title>
     <link rel="stylesheet" href="exercises.css" />
     <link rel="stylesheet" href="homepage.css" />
 
@@ -35,20 +35,13 @@
       rel="stylesheet"
     />
 
-    <meta name="author" content="David Mbagwu" />
+    <meta name="author" content="Hagen Cooley" />
   </head>
   <body>
     <header>
       <nav>
-        <div id="logo-container">
-          <a href="homepage.php">
-            <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
-          </a>
-        </div>
         <div id="nav-container">
-          <div id="nav-header">
-            <h2>Phantom Training</h2>
-          </div>
+          <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
           <ul id="nav-bar">
             <li class="page-link">
               <a href="homepage.php">Home</a>
@@ -69,6 +62,9 @@
         </div>
       </nav>
       <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
+      <div id="SearchContainer">
+          <input type='text' id='ExerciseSearch' placeholder='Search' autocomplete='off'/>
+      </div>
       <div class="CartItemsContainer">
             <table class="ExerciseContainer">
                 <thead>
@@ -128,6 +124,6 @@
 
     
 
-    <script src="script.js"></script>
+    <script src="workout.js"></script>
   </body>
 </html>
