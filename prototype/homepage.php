@@ -17,15 +17,8 @@
   <body>
     <header>
       <nav>
-        <div id="logo-container">
-          <a href="homepage.php">
-            <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
-          </a>
-        </div>
         <div id="nav-container">
-          <div id="nav-header">
-            <h2>Phantom Training</h2>
-          </div>
+          <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
           <ul id="nav-bar">
             <li class="page-link" id="current-page">
               <a href="homepage.php">Home</a>

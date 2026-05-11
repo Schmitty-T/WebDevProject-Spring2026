@@ -32,35 +32,28 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <header>
         <nav>
-          <div id="logo-container">
-            <a href="homepage.php">
-              <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
-            </a>
-          </div>
-          <div id="nav-container">
-            <div id="nav-header">
-              <h2>Phantom Training</h2>
-            </div>
-            <ul id="nav-bar">
-              <li class="page-link">
-                <a href="homepage.php">Home</a>
-              </li>
-              <li class="page-link" id="current-page">
-                <a href="dailyroutine.php">Daily Routine</a>
-              </li>
-              <li class="page-link">
-                <a href="workouts.php">Exercises</a>
-              </li>
-              <li class="page-link">
-                <a href="progress.html">Progress</a>
-              </li>
-              <li class="page-link">
-                <a href="contact_us.html">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
+        <div id="nav-container">
+          <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
+          <ul id="nav-bar">
+            <li class="page-link">
+              <a href="homepage.php">Home</a>
+            </li>
+            <li class="page-link" id="current-page">
+              <a href="dailyroutine.php">Daily Routine</a>
+            </li>
+            <li class="page-link">
+              <a href="workouts.php">Exercises</a>
+            </li>
+            <li class="page-link">
+              <a href="progress.html">Progress</a>
+            </li>
+            <li class="page-link">
+              <a href="contact_us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
       </header>
 
 <main>
