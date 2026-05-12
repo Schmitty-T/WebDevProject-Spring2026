@@ -118,6 +118,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $success = 'Progress logged!';
             }
         }
+        // DELETE: clear all progress entries for the user
+        if ($action === 'clear_progress') {
+            $stmt = $pdo->prepare("DELETE FROM ProgressEntries WHERE user_id = ?");
+            $stmt->execute([$user_id]);
+            $success = 'All progress entries cleared.';
+        }
     } catch (PDOException $e) {
         $error = 'Database error: ' . $e->getMessage();
     }
@@ -455,13 +461,23 @@ function h($value)
                 </div>
                 <button type="submit" class="log-submit-btn">Save Entry</button>
             </form>
+
+            <!-- Clear All Progress button (separate form to avoid mixing with the log form) -->
+            <form method="post" class="clear-form">
+                <input type="hidden" name="action" value="clear_progress" />
+                <button type="submit" class="clear-btn" onclick="return showClearConfirm(this.form);">
+                    Clear All Progress
+                </button>
+            </form>
+
         </div>
 
         <!-- Custom confirm modal -->
+        <!-- Custom confirm modal (used for delete and clear actions) -->
         <div id="confirmModal" class="modal-overlay" style="display: none;">
             <div class="modal-box">
-                <h3>Delete this goal?</h3>
-                <p>This cannot be undone.</p>
+                <h3 id="modalTitle">Delete this goal?</h3>
+                <p id="modalMessage">This cannot be undone.</p>
                 <div class="modal-buttons">
                     <button id="modalCancel" class="modal-btn modal-btn-cancel" type="button">Cancel</button>
                     <button id="modalConfirm" class="modal-btn modal-btn-delete" type="button">Delete</button>

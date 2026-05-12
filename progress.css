@@ -810,3 +810,37 @@ nav {
 .dark .modal-btn-cancel:hover {
   background-color: #555;
 }
+
+/* "Clear All Progress" button */
+.clear-form {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: #c0392b;
+  border: 2px solid #c0392b;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Dark mode for the clear button */
+.dark .clear-btn {
+  color: #ff7b6e;
+  border-color: #ff7b6e;
+}
+
+.dark .clear-btn:hover {
+  background-color: #ff7b6e;
+  color: #1f2a38;
+}
