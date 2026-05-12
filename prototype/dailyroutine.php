@@ -27,11 +27,10 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="homepage.css">
   <link rel="stylesheet" href="dailyroutine.css">
 </head>
-
 <body>
 
   <header>
-        <nav>
+      <nav>
         <div id="nav-container">
           <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
           <ul id="nav-bar">
@@ -54,10 +53,9 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
       </nav>
       <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
-      </header>
-
+    </header>
+</body>
 <main>
-
 <div class="routine-container">
 
   <!-- LEFT SIDE -->
