@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Remove the "msg" parameter from the URL after showing the success banner
-// so refreshing the page doesn't show the same message again
 if (window.location.search.includes("msg=")) {
   const cleanUrl = window.location.pathname;
   window.history.replaceState({}, "", cleanUrl);
