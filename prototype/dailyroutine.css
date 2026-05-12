@@ -104,9 +104,7 @@ body {
 #nav-container {
   text-align: center;
   background-color: #6498d7;
-  border-color: #3e4e62;
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid #3e4e62;
   padding: 10px;
   width: 100%;
 }
@@ -116,34 +114,9 @@ nav {
   display: flex;
 }
 
-#logo-container {
-  width: 20%;
-  height: 150px;
-}
-
-#logo-container a img {
-  height: 100%;
-  width: 100%;
-}
-#logo{
-    height:175px;
-    width: 300px;
-}
-
-.page-link {
-  padding: 5px;
-  background-color: black;
-  border-radius: 5px;
-  width: 10%;
-}
-.page-link a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.page-link:hover {
-  background-color: #3e4e62;
+#logo {
+  width: 300px;
+  height: auto;
 }
 
 #nav-bar {
@@ -152,6 +125,30 @@ nav {
   margin-top: 20px;
   width: 100%;
   gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.page-link {
+  background-color: black;
+  border-radius: 5px;
+  width: 10%;
+  padding: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.page-link a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.page-link:hover {
+  background-color: #3e4e62;
 }
 
 #current-page {

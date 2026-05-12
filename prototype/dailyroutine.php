@@ -26,6 +26,13 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <link rel="stylesheet" href="homepage.css">
   <link rel="stylesheet" href="dailyroutine.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
 
