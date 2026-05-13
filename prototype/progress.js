@@ -94,13 +94,25 @@ window.addEventListener("load", () => {
   });
 });
 
-// Custom delete confirmation modal (replaces browser confirm)
-let pendingDeleteForm = null;
+// Custom confirmation modal (handles both delete and clear actions)
+let pendingForm = null;
 
 function showDeleteConfirm(form) {
-  pendingDeleteForm = form;
+  pendingForm = form;
+  document.getElementById("modalTitle").textContent = "Delete this goal?";
+  document.getElementById("modalMessage").textContent = "This cannot be undone.";
+  document.getElementById("modalConfirm").textContent = "Delete";
   document.getElementById("confirmModal").style.display = "flex";
-  return false; // stop the form from submitting yet
+  return false;
+}
+
+function showClearConfirm(form) {
+  pendingForm = form;
+  document.getElementById("modalTitle").textContent = "Clear all progress?";
+  document.getElementById("modalMessage").textContent = "This will erase all your logged entries. This cannot be undone.";
+  document.getElementById("modalConfirm").textContent = "Clear All";
+  document.getElementById("confirmModal").style.display = "flex";
+  return false;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -111,32 +123,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cancelBtn) {
     cancelBtn.addEventListener("click", () => {
       modal.style.display = "none";
-      pendingDeleteForm = null;
+      pendingForm = null;
     });
   }
 
   if (confirmBtn) {
     confirmBtn.addEventListener("click", () => {
       modal.style.display = "none";
-      if (pendingDeleteForm) {
-        pendingDeleteForm.submit();
+      if (pendingForm) {
+        pendingForm.submit();
       }
     });
   }
 
-  // Close modal if user clicks outside the box
   if (modal) {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.style.display = "none";
-        pendingDeleteForm = null;
+        pendingForm = null;
       }
     });
   }
 });
 
 // Remove the "msg" parameter from the URL after showing the success banner
-// so refreshing the page doesn't show the same message again
 if (window.location.search.includes("msg=")) {
   const cleanUrl = window.location.pathname;
   window.history.replaceState({}, "", cleanUrl);
