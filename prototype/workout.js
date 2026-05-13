@@ -43,4 +43,34 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("welcome-message").textContent =
       `Welcome back, ${currentUser}!`;
   }
+  const searchInput = document.getElementById("ExerciseSearch");
+const tableBody = document.querySelector(".ExerciseContainer tbody");
+
+searchInput.addEventListener("input", ()=> {
+    const query = searchInput.value;
+    fetch(`exercisesearch.php?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                tableBody.innerHTML = "";
+        
+                data.forEach(exercise => {
+                    const row = document.createElement("tr");
+                    
+                    row.innerHTML =`
+                        <td class = "titlecell">
+                        ${exercise.Exercise}<br>
+                        <div class="buttoncontainer"> <p class="musclegroupplaceholder">${exercise.MuscleGroup}</p>
+                            <a class="tutorialvideobutton"
+                            target="_blank"
+                            href="${exercise.TutorialVideo}">
+                            Tutorial
+                            </a>
+                        </div>
+                        </td>`;
+            
+                    tableBody.appendChild(row);    
+                });
+            });    
+   
+});
 });

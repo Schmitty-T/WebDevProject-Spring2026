@@ -481,3 +481,366 @@ nav {
     height: 200px;
   }
 }
+
+/* ===== STYLES FOR NEW PROGRESS FEATURES ===== */
+
+/* Success and error message banners */
+.alert {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #721c24;
+}
+
+/* Add Goal form (input + button side by side) */
+.goal-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.goal-input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #6498d7;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.goal-input:focus {
+  outline: none;
+  border-color: #1e6ac8;
+}
+
+.goal-add-btn {
+  background-color: #1e6ac8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.goal-add-btn:hover {
+  background-color: #095bbf;
+}
+
+/* Goal row layout: checkbox + text + delete button */
+.goal-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.goal-text {
+  flex: 1;
+  margin: 0;
+}
+
+.goal-inline {
+  margin: 0;
+  display: inline-flex;
+}
+
+/* When a goal is marked as achieved, fade it and add strikethrough */
+.goal-row.achieved {
+  opacity: 0.6;
+}
+
+.goal-row.achieved .goal-text {
+  text-decoration: line-through;
+}
+
+/* Delete (×) button on each goal */
+.goal-delete-btn {
+  background-color: transparent;
+  color: #c0392b;
+  border: 2px solid #c0392b;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.goal-delete-btn:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Message shown when there are no goals yet */
+.empty-msg {
+  font-style: italic;
+  color: #3e4e62;
+  text-align: center;
+}
+
+/* "Log Today's Progress" section (matches goals-section styling) */
+#log-section {
+  width: 90%;
+  margin: 30px auto 50px auto;
+  background-color: white;
+  border: 2px solid #6498d7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#log-section h3 {
+  color: #1e6ac8;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Grid of inputs for the log form */
+.log-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.log-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: bold;
+  color: #3e4e62;
+  gap: 5px;
+}
+
+.log-row input {
+  padding: 8px 10px;
+  border: 2px solid #6498d7;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.log-row input:focus {
+  outline: none;
+  border-color: #1e6ac8;
+}
+
+.log-submit-btn {
+  background-color: #1e6ac8;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.log-submit-btn:hover {
+  background-color: #095bbf;
+}
+
+/* Dark mode versions */
+.dark .alert-success {
+  background-color: #1e4d2b;
+  color: #d4edda;
+  border-color: #d4edda;
+}
+
+.dark .alert-error {
+  background-color: #5a1a22;
+  color: #f8d7da;
+  border-color: #f8d7da;
+}
+
+.dark .goal-input,
+.dark .log-row input {
+  background-color: #2a3a4d;
+  color: #e0e0e0;
+  border-color: #7ab0ff;
+}
+
+.dark .goal-add-btn,
+.dark .log-submit-btn {
+  background-color: #2f6edb;
+}
+
+.dark .goal-add-btn:hover,
+.dark .log-submit-btn:hover {
+  background-color: #1e6ac8;
+}
+
+.dark #log-section {
+  background-color: #1f2a38;
+  border-color: #7ab0ff;
+}
+
+.dark #log-section h3 {
+  color: #7ab0ff;
+}
+
+.dark .log-row label {
+  color: #e0e0e0;
+}
+
+.dark .empty-msg {
+  color: #bdc8d5;
+}
+
+/* Mobile responsiveness for new forms */
+@media (max-width: 768px) {
+  .goal-form {
+    flex-direction: column;
+  }
+
+  .goal-add-btn {
+    width: 100%;
+  }
+}
+
+/* ===== CUSTOM DELETE CONFIRMATION MODAL ===== */
+
+/* Dark overlay that covers the page when modal is open */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* The white box in the middle */
+.modal-box {
+  background-color: white;
+  border: 2px solid #6498d7;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box h3 {
+  color: #1e6ac8;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.modal-box p {
+  color: #3e4e62;
+  margin: 0 0 25px 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.modal-btn-cancel {
+  background-color: #bdc8d5;
+  color: #3e4e62;
+}
+
+.modal-btn-cancel:hover {
+  background-color: #95a3b3;
+}
+
+.modal-btn-delete {
+  background-color: #c0392b;
+  color: white;
+}
+
+.modal-btn-delete:hover {
+  background-color: #962d22;
+}
+
+/* Dark mode */
+.dark .modal-box {
+  background-color: #1f2a38;
+  border-color: #7ab0ff;
+}
+
+.dark .modal-box h3 {
+  color: #7ab0ff;
+}
+
+.dark .modal-box p {
+  color: #bdc8d5;
+}
+
+.dark .modal-btn-cancel {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.dark .modal-btn-cancel:hover {
+  background-color: #555;
+}
+
+/* "Clear All Progress" button */
+.clear-form {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: #c0392b;
+  border: 2px solid #c0392b;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Dark mode for the clear button */
+.dark .clear-btn {
+  color: #ff7b6e;
+  border-color: #ff7b6e;
+}
+
+.dark .clear-btn:hover {
+  background-color: #ff7b6e;
+  color: #1f2a38;
+}

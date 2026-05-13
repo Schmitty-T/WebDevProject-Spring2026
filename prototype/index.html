@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Phantom Training</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="homepage.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <meta name="author" content="David Mbagwu" />
   </head>
   <body>
     <header>
@@ -26,72 +28,82 @@
             <h2>Phantom Training</h2>
           </div>
           <div id="nav-bar">
-            <div class="page-link"><a href="homepage.html">Home</a></div>
-            <div class="page-link">
-              <a href="dailyroutine.php">Daily Routine</a>
+            <div class="page-link" id="current-page">
+              <a href="index.html">Home</a>
             </div>
-            <div class="page-link"><a href="workouts.php">Exercises</a></div>
-            <div class="page-link"><a href="progress.html">Progress</a></div>
+            <div class="page-link">
+              <a href="daily_routine.html">Daily Routine</a>
+            </div>
+            <div class="page-link">
+              <a href="workouts.php">Exercises</a>
+            </div>
+            <div class="page-link">
+              <a href="progress.html">Progress</a>
+            </div>
             <div class="page-link">
               <a href="contact_us.html">Contact Us</a>
             </div>
           </div>
         </div>
       </nav>
-      <button id="themeToggle">Dark Mode</button>
+      <button id="themeToggle">Switch Theme</button>
     </header>
 
     <main>
       <div class="body-container">
         <div id="body-description">
-          <h3>Welcome Back</h3>
+          <h3>Unleash Your Inner Strength</h3>
+          <br />
           <p>
-            Enter your credentials to access your routines and track your
-            progress.
+            Phantom Training isn't just a workout; it’s a systematic approach to
+            elite physical performance. Whether you’re training at home or in
+            the gym, get the discipline, tracking, and routines you need to
+            disappear from your old self and re-emerge stronger.
           </p>
-
-          <form id="login-form">
-            <input
-              type="text"
-              id="login-username"
-              placeholder="Username"
-              required
-              style="
-                display: block;
-                margin: 20px auto;
-                padding: 12px;
-                width: 80%;
-                font-size: 16px;
-              "
-            />
-
-            <input
-              type="password"
-              id="login-password"
-              placeholder="Password"
-              required
-              style="
-                display: block;
-                margin: 20px auto;
-                padding: 12px;
-                width: 80%;
-                font-size: 16px;
-              "
-            />
-
-            <div id="body-button-holder" style="justify-content: center">
-              <button type="submit" class="body-button" id="login">
-                Login
-              </button>
+          <br />
+          <ul>
+            <li>
+              <h4>Precision Routine:</h4>
+              <p>Expert-crafted daily plans for all fitness levels.</p>
+            </li>
+            <li>
+              <h4>Dynamic Progress Tracking:</h4>
+              <p>Visualize your gains with real-time data.</p>
+            </li>
+            <li>
+              <h4>Exercise Library:</h4>
+              <p>Comprehensive tutorials to master your form.</p>
+            </li>
+            <li>
+              <h4>Direct Support:</h4>
+              <p>Contact our trainers for personalized adjustments.</p>
+            </li>
+          </ul>
+          <br />
+          <div id="auth-ui-container">
+            <div id="logged-out-view">
+              <div id="body-button-holder">
+                <div class="body-button" id="register">
+                  <a href="register.html"><p>Register</p></a>
+                </div>
+                <div class="body-button" id="login">
+                  <a href="login.html"><p>Login</p></a>
+                </div>
+              </div>
             </div>
-          </form>
 
-          <p style="text-align: center; margin-top: 20px">
-            Don't have an account?
-            <a href="register.html" style="color: #6498d7">Register here</a>
-          </p>
+            <div id="logged-in-view" style="display: none">
+              <h3 id="welcome-message"></h3>
+              <div id="body-button-holder">
+                <div id="body-button-holder">
+                  <div class="body-button" id="logout-btn">
+                    <p>Logout</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
         <div id="body-img-container">
           <img src="workout.png" alt="workout" id="body-img" />
         </div>

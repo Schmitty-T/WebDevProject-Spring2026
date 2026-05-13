@@ -17,24 +17,15 @@ toggle.addEventListener("click", () => {
   }
 });
 
-// Data shown in the weekly chart
-const weeklyData = [
-  { label: "Mon", value: 3 },
-  { label: "Tue", value: 5 },
-  { label: "Wed", value: 2 },
-  { label: "Thu", value: 4 },
-  { label: "Fri", value: 6 },
-  { label: "Sat", value: 5 },
-  { label: "Sun", value: 1 },
-];
+// Chart data is provided by PHP through window.progressChartData
+// Convert it to the format our drawChart function expects
+const weeklyData = window.progressChartData.weekly.labels.map(function (label, i) {
+  return { label: label, value: window.progressChartData.weekly.data[i] };
+});
 
-// Data shown in the monthly chart
-const monthlyData = [
-  { label: "Week 1", value: 12 },
-  { label: "Week 2", value: 15 },
-  { label: "Week 3", value: 10 },
-  { label: "Week 4", value: 18 },
-];
+const monthlyData = window.progressChartData.monthly.labels.map(function (label, i) {
+  return { label: label, value: window.progressChartData.monthly.data[i] };
+});
 
 // Chart area and buttons
 const chartContainer = document.getElementById("chart-container");
@@ -50,6 +41,8 @@ function drawChart(data) {
       maxValue = data[i].value;
     }
   }
+
+  if (maxValue === 0) maxValue = 1; // avoid divide-by-zero when chart is empty
 
   // Remove the old chart before drawing a new one
   chartContainer.innerHTML = "";
@@ -100,3 +93,61 @@ window.addEventListener("load", () => {
     fill.style.width = percent + "%";
   });
 });
+
+// Custom confirmation modal (handles both delete and clear actions)
+let pendingForm = null;
+
+function showDeleteConfirm(form) {
+  pendingForm = form;
+  document.getElementById("modalTitle").textContent = "Delete this goal?";
+  document.getElementById("modalMessage").textContent = "This cannot be undone.";
+  document.getElementById("modalConfirm").textContent = "Delete";
+  document.getElementById("confirmModal").style.display = "flex";
+  return false;
+}
+
+function showClearConfirm(form) {
+  pendingForm = form;
+  document.getElementById("modalTitle").textContent = "Clear all progress?";
+  document.getElementById("modalMessage").textContent = "This will erase all your logged entries. This cannot be undone.";
+  document.getElementById("modalConfirm").textContent = "Clear All";
+  document.getElementById("confirmModal").style.display = "flex";
+  return false;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("confirmModal");
+  const cancelBtn = document.getElementById("modalCancel");
+  const confirmBtn = document.getElementById("modalConfirm");
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      pendingForm = null;
+    });
+  }
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      if (pendingForm) {
+        pendingForm.submit();
+      }
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        pendingForm = null;
+      }
+    });
+  }
+});
+
+// Remove the "msg" parameter from the URL after showing the success banner
+if (window.location.search.includes("msg=")) {
+  const cleanUrl = window.location.pathname;
+  window.history.replaceState({}, "", cleanUrl);
+}
