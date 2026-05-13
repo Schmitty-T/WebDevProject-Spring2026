@@ -56,7 +56,7 @@
               <a href="progress.html">Progress</a>
             </li>
             <li class="page-link">
-              <a href="contact_us.html">Contact Us</a>
+              <a href="contact_us.php">Contact Us</a>
             </li>
           </ul>
         </div>
