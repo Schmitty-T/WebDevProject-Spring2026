@@ -16,29 +16,30 @@
   <body>
     <header>
       <nav>
-        <div id="logo-container">
-          <a href="homepage.php">
-            <img src="logo.jpeg" alt="logo" id="logo" />
-          </a>
-        </div>
         <div id="nav-container">
-          <div id="nav-header">
-            <h2>Phantom Training</h2>
-          </div>
-          <div id="nav-bar">
-            <div class="page-link"><a href="homepage.php">Home</a></div>
-            <div class="page-link">
-              <a href="daily_routine.html">Daily Routine</a>
-            </div>
-            <div class="page-link"><a href="exercises.html">Exercises</a></div>
-            <div class="page-link"><a href="progress.html">Progress</a></div>
-            <div class="page-link">
+          <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
+          <ul id="nav-bar">
+            <li class="page-link" id="current-page">
+              <a href="homepage.php">Home</a>
+            </li>
+            <li class="page-link">
+              <a href="dailyroutine.php">Daily Routine</a>
+            </li>
+            <li class="page-link">
+              <a href="workouts.php">Exercises</a>
+            </li>
+            <li class="page-link">
+              <a href="progress.php">Progress</a>
+            </li>
+            <li class="page-link">
               <a href="contact_us.html">Contact Us</a>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </nav>
-      <button id="themeToggle">Dark Mode</button>
+      <button id="themeToggle" aria-label="Toggle dark and light theme">
+        Switch Theme
+      </button>
     </header>
 
     <main>
