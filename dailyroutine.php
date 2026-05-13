@@ -26,50 +26,43 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <link rel="stylesheet" href="homepage.css">
   <link rel="stylesheet" href="dailyroutine.css">
-</head>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
 <body>
 
-<header>
-  <nav>
-    <div id="logo-container">
-      <a href="homepage.html">
-        <img src="logo.jpeg" alt="logo">
-      </a>
-    </div>
-
-    <div id="nav-container">
-      <h2>Phantom Training</h2>
-
-      <div id="nav-bar">
-        <div class="page-link">
-          <a href="homepage.html">Home</a>
+  <header>
+      <nav>
+        <div id="nav-container">
+          <img src="logo.jpeg" alt="Phantom Training Logo" id="logo" />
+          <ul id="nav-bar">
+            <li class="page-link">
+              <a href="homepage.php">Home</a>
+            </li>
+            <li class="page-link" id="current-page">
+              <a href="dailyroutine.php">Daily Routine</a>
+            </li>
+            <li class="page-link">
+              <a href="workouts.php">Exercises</a>
+            </li>
+            <li class="page-link">
+              <a href="progress.html">Progress</a>
+            </li>
+            <li class="page-link">
+              <a href="contact_us.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
-
-        <div class="page-link" id="current-page">
-          <a href="dailyroutine.php">Daily Routine</a>
-        </div>
-
-        <div class="page-link">
-          <a href="workouts.php">Exercises</a>
-        </div>
-
-        <div class="page-link">
-          <a href="progress.html">Progress</a>
-        </div>
-
-        <div class="page-link">
-          <a href="contact_us.html">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <button id="themeToggle">Dark Mode</button>
-</header>
-
+      </nav>
+      <button id="themeToggle" aria-label="Toggle dark and light theme">Switch Theme</button>
+    </header>
+</body>
 <main>
-
 <div class="routine-container">
 
   <!-- LEFT SIDE -->
@@ -111,8 +104,9 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </main>
 
-<script src="dailyroutine.js"></script>
 <script src="script.js"></script>
+<script src="dailyroutine.js"></script>
+
 
 </body>
 </html>
