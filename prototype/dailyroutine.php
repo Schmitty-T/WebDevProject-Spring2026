@@ -51,7 +51,7 @@ $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <a href="workouts.php">Exercises</a>
             </li>
             <li class="page-link">
-              <a href="progress.html">Progress</a>
+              <a href="progress.php">Progress</a>
             </li>
             <li class="page-link">
               <a href="contact_us.php">Contact Us</a>
